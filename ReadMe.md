@@ -1,11 +1,13 @@
 # React Example
 This project is meant to serve an example React Project with proper scaffolding and CI/CD.
 
+**Production Url:** [https://react-example-799a0.web.app/](https://react-example-799a0.web.app/)
+
 ## Setup
-* Clone the repository
-* Run `npm install`
-* Copy `.env.dist` to `.env`
-* Run `npm start`
+* Clone the repository.
+* Run `npm install`.
+* Copy `.env.dist` to `.env`.
+* Run `npm start`.
 
 ## Deployment
 * Opening a *PR* will automatically create a *Preview* deployment which will have a URL in the PR.
