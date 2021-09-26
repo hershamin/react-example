@@ -8,6 +8,6 @@ test('renders learn react link', () => {
       <App/>
     </BrowserRouter>
   );
-  const clickCountElement = screen.getByText('0 click');
+  const clickCountElement = screen.getByText('0 clicks');
   expect(clickCountElement).toBeInTheDocument();
 });
