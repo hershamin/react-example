@@ -16,11 +16,10 @@ const App = () => {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>{clickCount} click{clickCount > 1 ? 's' : ''}</p>
+        <p>{clickCount} click{clickCount === 1 ? '' : 's'}</p>
         <a
           className="App-link"
-          href="#"
-          target="_self"
+          href="#/"
           rel="noopener noreferrer"
           onClick={() => ExampleStore.update(s => {
             s.clickCount = clickCount + 1
