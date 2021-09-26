@@ -18,3 +18,4 @@ This project is meant to serve an example React Project with proper scaffolding 
 * Redux is used for data management.
 * React Router Dom is used for routing.
 * Bootstrap framework is used for appearence.
+
