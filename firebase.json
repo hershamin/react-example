@@ -1,0 +1,43 @@
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "README.md",
+      "firebase.json",
+      "**/.*",
+      "package.json",
+      "package-lock.json",
+      "**/node_modules/**",
+      "**/src/**",
+      "**/config/**",
+      "**/public/**",
+      "**/scripts/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/service-worker.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0"
+          }
+        ]
+      },
+      {
+        "source": "/index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0"
+          }
+        ]
+      }
+    ]
+  }
+}
