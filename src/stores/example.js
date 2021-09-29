@@ -1,5 +1,21 @@
-import { Store } from 'pullstate';
+import { createSlice } from '@reduxjs/toolkit';
 
-export const ExampleStore = new Store({
-  clickCount: 0,
+const initialState = {
+  clicks: 0,
+};
+
+export const exampleSlice = createSlice({
+  name: 'example',
+  initialState,
+  reducers: {
+    increment: (state, action) => {
+      state.clicks += 1;
+    },
+  }
 });
+
+export const {
+  increment
+} = exampleSlice.actions;
+
+export default exampleSlice.reducer;

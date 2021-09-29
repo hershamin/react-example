@@ -1,13 +1,18 @@
 import { Switch, Route } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { increment as incrementCount } from '../stores/example';
+
 import routes from '../routes';
 import logo from '../logo.svg';
-
-import { ExampleStore } from '../stores/example';
 
 import './App.css';
 
 const App = () => {
-  const clickCount = ExampleStore.useState(s => s.clickCount);
+  const dispatch = useDispatch();
+  const { clickCount } = useSelector(state => ({
+    clickCount: state.example.clicks,
+  }));
 
   return (
     <div className="App">
@@ -21,9 +26,7 @@ const App = () => {
           className="App-link"
           href="#/"
           rel="noopener noreferrer"
-          onClick={() => ExampleStore.update(s => {
-            s.clickCount = clickCount + 1
-          })}
+          onClick={() => dispatch(incrementCount())}
         >
           Click
         </a>
