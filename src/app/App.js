@@ -1,7 +1,8 @@
+import { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { increment as incrementCount } from '../stores/example';
+import { increment as incrementCount, httpGet } from '../stores/example';
 
 import routes from '../routes';
 import logo from '../logo.svg';
@@ -10,9 +11,14 @@ import './App.css';
 
 const App = () => {
   const dispatch = useDispatch();
-  const { clickCount } = useSelector(state => ({
+  const { clickCount, userAgent } = useSelector(state => ({
     clickCount: state.example.clicks,
+    userAgent: state.example.getRequest.userAgent,
   }));
+
+  useEffect(() => {
+    dispatch(httpGet());
+  }, []);
 
   return (
     <div className="App">
@@ -30,6 +36,7 @@ const App = () => {
         >
           Click
         </a>
+        <p>User Agent: {userAgent}</p>
         <Switch>
           <Route path={routes.r1} component={() => (<span>R1 route</span>)} />
           <Route path={routes.r2} component={() => (<span>R2 route</span>)} />
