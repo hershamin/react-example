@@ -18,7 +18,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(httpGet());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">
